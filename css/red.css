@@ -1,0 +1,43 @@
+.services-boxs .box span{
+    color:#FF0000!important;
+}
+.Edu-box .box{
+    border-color: #FF0000!important;
+}
+.Exp-box .box{
+    border-color: #FF0000!important;
+}
+.Edu-box .box span{
+   background-color: #FF0000 !important;
+}
+.Exp-box .box span{
+   background-color: #FF0000 !important;
+}
+.Testimonials .box{
+  border-color: #FF0000!important;
+}
+.Testimonials .client{
+  border-color: #FF0000!important;
+}
+.Testimonials .owl-dots  .active span{
+  background-color: #FF0000!important;
+}
+.contact .child-box{
+border-color: #FF0000!important;
+}
+.contact .child-box span{
+  border-color: #FF0000!important;
+
+}
+.send button{
+  background-color: #FF0000!important;
+  color: #FFF!important;
+
+}
+.social-icon{
+  background-color: #FF0000!important;
+
+}
+.options-button{
+  background-color: #FF0000!important;
+}

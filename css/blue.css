@@ -1,0 +1,43 @@
+.services-boxs .box span{
+    color:#007CED!important;
+}
+.Edu-box .box{
+    border-color: #007CED!important;
+}
+.Exp-box .box{
+    border-color: #007CED!important;
+}
+.Edu-box .box span{
+   background-color: #007CED !important;
+}
+.Exp-box .box span{
+   background-color: #007CED !important;
+}
+.Testimonials .box{
+  border-color: #007CED!important;
+}
+.Testimonials .client{
+  border-color: #007CED!important;
+}
+.Testimonials .owl-dots  .active span{
+  background-color: #007CED!important;
+}
+.contact .child-box{
+border-color: #007CED!important;
+}
+.contact .child-box span{
+  border-color: #007CED!important;
+
+}
+.send button{
+  background-color: #007CED!important;
+  color: #FFF!important;
+
+}
+.social-icon{
+  background-color: #007CED!important;
+
+}
+.options-button{
+  background-color: #007CED!important;
+}

@@ -1,0 +1,814 @@
+$main-color:#1E1E1E;
+$secound-color:#007CED;
+
+/* ----------------------------------------------------------------
+     [ 01 Start Basics ]
+-----------------------------------------------------------------*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	list-style: none;
+	word-wrap: break-word;
+}
+
+body {
+	color: #212529;
+	line-height: 1.3;
+	font-weight: 500;
+	font-size: 14px;
+	font-family: 'Poppins', sans-serif;
+	overflow-x: hidden !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'poppins', sans-serif;
+}
+
+p {
+	font-size: 15px;
+	font-weight: 300;
+	color: #707070;
+	line-height: 1.8;
+	margin: 0;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+ul {
+	margin: 0;
+}
+
+span,
+a,
+a:hover {
+	display: inline-block;
+	text-decoration: none;
+	color: inherit;
+}
+
+.section-padding {
+	padding: 100px 0 80px 0px;
+}
+
+//-----------------------------------------------------------------------
+
+/* ----------------------------------------------------------------
+     [ 02 Start Navbar ]
+-----------------------------------------------------------------*/
+
+.navbar {
+	height: 90px;
+	background-color: transparent;
+	width: 100%;
+	padding: 20px;
+	@media (max-width: 992px) {
+		background-color: #000;
+	}
+	.brand {
+		color: #fff;
+		padding-left: 10px;
+		padding-top: 10px;
+		font-size: 26px;
+	}
+	/* menu button */
+	.menuBtn {
+		height: 30px;
+		width: 30px;
+		position: absolute;
+		right: 20px;
+		top: 30px;
+		z-index: 101;
+		padding-top: 10px;
+		@media (max-width: 1366px) {
+			display: block!important;
+		}
+		>span {
+			background-color: #fff;
+			border-radius: 1px;
+			height: 2px;
+			width: 100%;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin: -1px 0 0 -15px;
+			transition: height 100ms;
+			&:after,
+			&:before {
+				content: '';
+				background-color: #fff;
+				border-radius: 1px;
+				height: 2px;
+				width: 100%;
+				position: absolute;
+				left: 50%;
+				margin-left: -15px;
+				transition: all 200ms;
+			}
+			&:after {
+				top: -7px;
+			}
+			&:before {
+				bottom: -7px;
+			}
+		}
+		&.act {
+			>span {
+				height: 0;
+				&:after,
+				&:before {
+					background-color: #FFF;
+					top: 1px;
+				}
+				&:after {
+					transform: rotate(45deg);
+				}
+				&:before {
+					transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+	/* main menu block */
+	.mainMenu {
+		background-color: $main-color;
+		z-index: 100;
+		height: 100vh;
+		width: 1366px;
+		display: table;
+		text-align: center;
+		opacity: 0;
+		transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+		transform: scale(0);
+		&.act {
+			opacity: 1;
+			transform: scale(1);
+			ul li {
+				opacity: 1;
+				transform: translateX(0);
+			}
+		}
+		ul {
+			display: table-cell;
+			vertical-align: middle;
+			margin: auto;
+		}
+		li {
+			padding: 8px 0;
+			transition: all 400ms 510ms;
+			opacity: 0;
+			&:nth-child(odd) {
+				transform: translateX(30%);
+			}
+			&:nth-child(even) {
+				transform: translateX(-30%);
+			}
+			&:last-child {
+				transform: none;
+			}
+		}
+		a {
+			color: #fff;
+			display: inline-block;
+			font-size: 18px;
+			&.suBtn {
+				color: #fff;
+			}
+		}
+	}
+}
+
+
+/* ----------------------------------------------------------------
+     [ 03 Start Header ]
+-----------------------------------------------------------------*/
+
+.header {
+	background: url('../img/header.jpg');
+	height: 100vh;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	.container {
+		@media (max-width: 992px) {
+			max-width: 100%!important;
+		}
+		.caption {
+			color: #FFF;
+			h2 {
+				font-size: 24px;
+			}
+			h1 {
+				font-size: 55px;
+				margin-top: 60px;
+			}
+		}
+	}
+}
+
+
+/* ----------------------------------------------------------------
+     [ 04 Start About ]
+-----------------------------------------------------------------*/
+
+.About {
+	background-color: $main-color;
+	
+	h2 {
+		font-size: 32px;
+		color: #FFF;
+	}
+	p {
+		font-size: 40px;
+		margin-top: 100px;
+		margin-bottom: 30px;
+		font-weight: 700;
+		color: #fff;
+		span {
+			text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
+		}
+		@media (max-width:767px) {
+			font-size: 26px;
+		}
+	}
+}
+
+
+/* ----------------------------------------------------------------
+     [ 05 Start Services ]
+-----------------------------------------------------------------*/
+
+.services {
+	background-color: $main-color;
+	h2 {
+		color: #FFF;
+		font-size: 32px;
+	}
+	.services-boxs {
+		margin-top: 80px;
+		.box {
+			margin-bottom: 50px;
+			span {
+				color: $secound-color;
+				font-size: 34px;
+				padding: 10px 0 15px 0;
+			}
+			h3 {
+				font-size: 18px;
+				color: #FFF;
+				margin-top: 16px;
+			}
+			p {
+				font-size: 14px;
+				color: #707070;
+				margin-top: 16px;
+			}
+		}
+	}
+}
+
+
+/* ----------------------------------------------------------------
+     [ 06 Start portfolio ]
+-----------------------------------------------------------------*/
+
+.portfolio {
+	background-color: $main-color;
+	h2 {
+		color: #FFF;
+	}
+	.portfolio-buttons {
+		margin: 80px 0px 50px 0px;
+		display: flex;
+		justify-content: center;
+		cursor: pointer;
+		span {
+			color: #FFF;
+			padding: 10px 25px;
+			font-size: 16px;
+			@media (max-width: 750px) {
+				padding: 10px 12px;
+				font-size: 13px;
+			}
+			&.active {
+				background-color: #000;
+			}
+		}
+	}
+	.portfolio-boxs {
+		.box {
+			margin-bottom: 30px;
+			img {
+				&:hover {
+					animation-name: pulse-shrink;
+					animation-duration: .3s;
+					animation-timing-function: linear;
+					animation-iteration-count: infinite;
+					animation-direction: alternate;
+					@keyframes pulse-shrink {
+						to {
+							transform: scale(.9);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/* ----------------------------------------------------------------
+     [ 07 Start Skills ]
+-----------------------------------------------------------------*/
+
+.Skills {
+	background-color: $main-color;
+	h2 {
+		color: #FFF;
+		margin-bottom: 80px;
+	}
+	.skills-left {
+		padding-right: 60px;
+		@media (max-width: 560px) {
+			padding-right: 10px;
+		}
+		.progress-item {
+			span {
+				color: #FFF !important;
+			}
+		}
+	}
+	.skills-right {
+		display: flex;
+		padding: 10px 16px 0px 100px;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		@media (max-width: 992px) {
+			padding: 10px 30px;
+		}
+		.style {
+			margin-bottom: 50px;
+			text-align: center;
+		}
+	}
+}
+
+
+/* ----------------------------------------------------------------
+     [ 08 Start Expertises ]
+-----------------------------------------------------------------*/
+
+.Expertises {
+	background-color: $main-color;
+	h2 {
+		margin-bottom: 80px;
+		color: #FFF;
+	}
+	.Edu-box{
+		@media (max-width:767px) {
+			
+		
+		margin-top: 50px;
+		}
+	}
+	.Exp-box,
+	.Edu-box {
+		margin-bottom: 30px;
+		h3 {
+			color: #fff;
+			font-size: 16px;
+			margin-bottom: 50px;
+		}
+		.box {
+			border: 1px solid $secound-color;
+			padding: 30px;
+			margin-bottom: 30px;
+			h3 {
+				margin: 16px 0;
+			}
+			span {
+				background-color: $secound-color;
+				font-size: 12px;
+				color: #FFF;
+				padding: 3px 4px;
+				border-radius: 10px;
+			}
+			p {
+				font-size: 16px;
+				margin: 16px 0;
+			}
+		}
+	}
+}
+
+
+/* ----------------------------------------------------------------
+     [ 09 Start Testimonials ]
+-----------------------------------------------------------------*/
+
+.Testimonials {
+	background-color: $main-color;
+	h2 {
+		color: #FFF;
+		margin-bottom: 80px;
+	}
+	.owl-carousel {
+		.item {
+			padding: 30px;
+			border: 1px solid $secound-color;
+			display: flex;
+			justify-content: space-between;
+			@media (max-width: 500px) {
+				padding:30px 10px;
+			}
+			.client {
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				float: left;
+				border: 1px solid $secound-color;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				
+				@media (max-width: 500px) {
+					width: 50px;
+					height: 50px;
+				}
+				img {
+					width: 50px;
+					height: 50px;
+					border-radius: 50%;
+					@media (max-width: 500px) {
+						width: 25px;
+						height: 25px;
+					}
+				}
+			}
+			.client-say {
+				
+				@media (max-width: 460px) {
+					max-width:65%;
+				}
+				@media (min-width:461px){
+					max-width: 75%;
+				}
+				h3 {
+					font-size: 16px;
+					color: #FFF;
+					margin-bottom: 16px;
+					@media (max-width: 500px) {
+						font-size: 13px;
+					}
+				}
+				p {
+					font-size: 14px;
+					margin-bottom: 16px;
+					@media (max-width: 500px) {
+						font-size: 8px;
+					}
+				}
+				h4 {
+					font-size: 14px;
+					color: #fff;
+					@media (max-width: 500px) {
+						font-size: 8px;
+					}
+				}
+			}
+		}
+		.owl-dots {
+			justify-content: center;
+			display: flex;
+			margin-top: 50px;
+			.owl-dot {
+				margin: 5px;
+				&.active {
+					span {
+						background-color: $secound-color;
+					}
+				}
+				span {
+					background-color: #fff;
+					width: 10px;
+					height: 10px;
+					border-radius: 50%;
+				}
+			}
+		}
+	}
+	.Hire {
+		margin-top: 80px;
+		margin-bottom: 30px;
+		padding: 50px 0;
+		background-color: $main-color;
+		background-color: #000;
+		color: #fff;
+		h2 {
+			margin-bottom: 80px;
+		}
+		button {
+			background-color: transparent;
+			border: 1px solid #FFF;
+			color: #FFF;
+			width: 140px;
+		}
+	}
+}
+
+
+/* ----------------------------------------------------------------
+     [ 10 Start Basics ]
+-----------------------------------------------------------------*/
+
+.contact {
+	background-color: $main-color;
+	h2 {
+		color: #FFF;
+	}
+	.boxs {
+		margin: 80px 0;
+		.box {
+			@media (max-width: 992px) {
+				margin-bottom: 50px;
+			}
+			.child-box {
+				border: 1px solid $secound-color;
+				padding: 30px 0;
+				span {
+					width: 100px;
+					height: 100px;
+					border-radius: 50%;
+					border: 1px solid $secound-color;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin: auto;
+					.style {
+						color: white;
+						font-size: 30px;
+					}
+				}
+				h3 {
+					font-size: 16px;
+					color: #FFF;
+					margin: 30px 0 16px 0;
+				}
+				p {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+	.send {
+		text-align: left;
+		margin-bottom: 30px;
+		.send-box {
+			@media (max-width: 992px) {
+				margin-bottom: 50px;
+			}
+			form {
+				margin: 30px 0;
+				margin-bottom: 0px;
+				input {
+					background-color: transparent;
+					height: 50px;
+					width: 100%;
+					border: 1px solid #707070;
+					&::placeholder {
+						padding-left: 10px;
+					}
+				}
+				textarea {
+					margin-top: 16px;
+					background-color: transparent;
+					&::placeholder {
+						padding-top: 16px;
+					}
+				}
+				.send-button {
+					text-align: center;
+					button {
+						width: 100%;
+						height: 50px;
+						border-radius: 20px;
+						border-color: transparent;
+						background-color: $secound-color;
+						color: #FFF;
+						cursor: pointer;
+					}
+				}
+			}
+			span {
+				color: #FFF;
+			}
+		}
+		.map-box {
+			height: auto;
+			#ieatmaps {
+				height: 310px;
+				margin-top: 30px;
+			}
+		}
+	}
+}
+
+
+
+/* ----------------------------------------------------------------
+     [ 11 Start Footer ]
+-----------------------------------------------------------------*/
+footer {
+	background-color: $main-color;
+	text-align: center;
+	padding: 50px 0px;
+	h2 {
+		font-size: 14px;
+		color: #FFF;
+	}
+	.social {
+		margin-top: 30px;
+		a {
+			background-color: $secound-color;
+			border-radius: 50%;
+			padding: 10px;
+			width: 35px;
+			margin: 0 10px;
+			font-size: 12px;
+			color: #FFF;
+			cursor: pointer;
+		}
+	}
+}
+
+
+/* ----------------------------------------------------------------
+     [ 12 Start preloader ]
+-----------------------------------------------------------------*/
+
+#loading {
+	background-color: $main-color;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 100000000000000;
+}
+
+@keyframes ldio-4sl1n4w5q0o {
+	0% {
+		top: 96px;
+		left: 96px;
+		width: 0;
+		height: 0;
+		opacity: 1;
+	}
+	100% {
+		top: 18px;
+		left: 18px;
+		width: 156px;
+		height: 156px;
+		opacity: 0;
+	}
+}
+
+.ldio-4sl1n4w5q0o div {
+	position: absolute;
+	border-width: 4px;
+	border-style: solid;
+	opacity: 1;
+	border-radius: 50%;
+	animation: ldio-4sl1n4w5q0o 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.ldio-4sl1n4w5q0o div:nth-child(1) {
+	border-color: #e90c59
+}
+
+.ldio-4sl1n4w5q0o div:nth-child(2) {
+	border-color: #46dff0;
+	animation-delay: -0.5s;
+}
+
+.loadingio-spinner-ripple-opq7bgoks4 {
+	width: 200px;
+	height: 200px;
+	display: inline-block;
+	overflow: hidden;
+	background: #ffffff;
+}
+
+.ldio-4sl1n4w5q0o {
+	width: 100%;
+	height: 100%;
+	top: 30%;
+	left: calc(50% - 100px);
+	position: relative;
+	transform: translateZ(0) scale(1);
+	backface-visibility: hidden;
+	transform-origin: 0 0;
+	/* see note above */
+}
+
+.ldio-4sl1n4w5q0o div {
+	box-sizing: content-box;
+}
+
+
+/* ----------------------------------------------------------------
+     [ 13 Start options ]
+-----------------------------------------------------------------*/
+
+.options-button {
+	position: fixed;
+	right: 0;
+	top: 50%;
+	width: 40px;
+	height: 40px;
+	background-color: $secound-color;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: all .1s ease-in-out;
+	&.BtnState {
+		right: 160px;
+	}
+	span {
+		color: #fff;
+		-webkit-animation: rotate 1s infinite;
+		-moz-animation: rotate 1s infinite;
+		-ms-animation: rotate 1s infinite;
+		animation: rotate 1s infinite;
+		-webkit-animation-timing-function: linear;
+		-moz-animation-timing-function: linear;
+		-ms-animation-timing-function: linear;
+		animation-timing-function: linear
+	}
+	@keyframes rotate {
+		100% {
+			-moz-transform: rotate(360deg);
+			-ms-transform: rotate(360deg);
+			transform: rotate(360deg)
+		}
+	}
+}
+
+.options {
+	width: 150px;
+	height: 150px;
+	position: fixed;
+	top: 50%;
+	right: -150px;
+	padding: 10px 0;
+	background-color: #FFF;
+	text-align: center;
+	transition: all .1s ease-in-out;
+	z-index: 100000;
+	&.state {
+		right: 0px;
+	}
+	h3 {
+		color: $main-color;
+	}
+	ul {
+		margin: 30px 0px;
+		padding: 0px 10px;
+		li {
+			float: left;
+			a {
+				margin-left: 10px;
+				margin-top: 10px;
+				.green {
+					background-color: #469F4A;
+					width: 20px;
+					height: 20px;
+				}
+				.purple {
+					background-color: #9A6FE6;
+					width: 20px;
+					height: 20px;
+				}
+				.Blue {
+					background-color: $secound-color;
+					width: 20px;
+					height: 20px;
+				}
+				.Red {
+					background-color: #FF0000;
+					width: 20px;
+					height: 20px;
+				}
+			}
+		}
+	}
+}
